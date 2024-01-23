@@ -4,6 +4,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
+const PugPlugin = require('pug-plugin');
 
 const isProduction = process.env.NODE_ENV == 'production';
 
@@ -13,18 +14,26 @@ const stylesHandler = isProduction ? MiniCssExtractPlugin.loader : 'style-loader
 
 
 const config = {
-    entry: './src/index.js',
+    entry: {
+        index: './src/views/index.pug',
+    },
     output: {
         path: path.resolve(__dirname, 'dist'),
     },
     devServer: {
         open: true,
         host: 'localhost',
+        watchFiles: {
+            paths: ['src/**/*.*', 'src/sass/**/*.*'],
+        }
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            template: 'index.html',
-        }),
+        new PugPlugin({
+            pretty: true,
+            css: {
+                filename: 'assets/css/[name].[contenthash:8].css'
+            }
+        })
 
         // Add your plugins here
         // Learn more about plugins from https://webpack.js.org/configuration/plugins/
@@ -32,12 +41,16 @@ const config = {
     module: {
         rules: [
             {
+                test: /\.pug$/,
+                loader: PugPlugin.loader
+            },
+            {
                 test: /\.(js|jsx)$/i,
                 loader: 'babel-loader',
             },
             {
                 test: /\.s[ac]ss$/i,
-                use: [stylesHandler, 'css-loader', 'postcss-loader', 'sass-loader'],
+                use: ['css-loader', 'postcss-loader', 'sass-loader'],
             },
             {
                 test: /\.css$/i,
