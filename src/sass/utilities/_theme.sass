@@ -1,0 +1,23 @@
+@use './../abstract' as *
+
+:root 
+  font-family: 'Outfit'
+  font-weight: 300
+
+
+
+h1, h2, h3, h4, h5, h6
+  font-family: 'Young Serif'
+
+.font-outfit
+  font-family: 'Outfit'
+
+
+@for $size from 1 through 9
+  .weight-#{$size}00
+    font-weight: #{$size}00
+
+$baseSize: 4
+@for $headingNumber from 1 through 6
+  h#{$headingNumber}
+    font-size: #{$baseSize - calc($headingNumber/2)}rem
