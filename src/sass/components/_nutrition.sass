@@ -1,0 +1,14 @@
+@use './../abstract' as *
+
+
+.nutrition
+  &__list
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+
+    > span
+      padding: 1rem
+      border-block-end: 1px solid $grey-light
+      
+      &:nth-child(even)
+        color: $nutmeg

@@ -5,18 +5,45 @@
 
 :root 
   font-family: 'Outfit'
-  font-weight: 300
+  font-weight: 400
+  color: $wenge-brown
 
 
 
 h1, h2, h3, h4, h5, h6
   font-family: 'Young Serif'
+  color: $nutmeg
+
+li
+  list-style-position: inside
+
+li::marker
+  color: $nutmeg
+  
+.color-nutmeg
+  color: $nutmeg
+
+.color-raspberry
+  color: $raspberry-dark
 
 .font-outfit
   font-family: 'Outfit'
 
+.font-young
+  font-family: 'Young Serif'
+
+.list-style-disc
+  list-style: disc
+
+.list-style-number
+  list-style: decimal
+
+
 li > span
   font-weight: 600 
+
+section 
+  margin-block: 1rem
 
 @for $size from 1 through 9
   .weight-#{$size}00

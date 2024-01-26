@@ -10,15 +10,16 @@ html(lang="en")
     main.recipe
       picture 
         img(src=require('./../assets/images/image-omelette.jpeg'), alt="Omelette Image")
-      
-      h1 Simple Omelette Recipe
 
-      p An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked to perfection, optionally filled with your choice of cheese, vegetables, or meats.
-      
-      section.preparation
-        h5.font-outfit.weight-600 Preparation time
+      section.description
+        h1 Simple Omelette Recipe
+
+        p An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked to perfection, optionally filled with your choice of cheese, vegetables, or meats.
         
-        ul.preparation__list
+      section.preparation
+        h5.font-outfit.weight-600.color-raspberry Preparation time
+        
+        ul.preparation__list.list-style-disc
           li.preparation__list-item
             span Total 
             |: Approximately 10 minutes
@@ -32,7 +33,7 @@ html(lang="en")
       section.ingredients
         h4 Ingredients
         
-        ul
+        ul.list-style-disc
           li 2-3 large eggs
           li Salt, to taste
           li Pepper, to taste
@@ -42,7 +43,7 @@ html(lang="en")
       section.instructions
         h4 Instructions
 
-        ol
+        ol.list-style-number
           li 
             span Beat the eggs
             |: In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. You can add a tablespoon of water or milk for a fluffier texture.
@@ -74,11 +75,11 @@ html(lang="en")
 
         section.nutrition__list
           span Calories
-          span 277kcal
+          span.weight-600 277kcal
           span Carbs
-          span 0g
+          span.weight-600 0g
           span Protein
-          span 20g
+          span.weight-600 20g
           span Fat
-          span 22g
+          span.weight-600 22g
 
