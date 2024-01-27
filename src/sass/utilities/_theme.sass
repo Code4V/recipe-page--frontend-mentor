@@ -14,8 +14,12 @@ h1, h2, h3, h4, h5, h6
   font-family: 'Young Serif'
   color: $nutmeg
 
+
 li
   list-style-position: inside
+  
+li:not(:last-child)
+  margin-block: 1rem
 
 li::marker
   color: $nutmeg
@@ -52,4 +56,4 @@ section
 $baseSize: 4
 @for $headingNumber from 1 through 6
   h#{$headingNumber}
-    font-size: #{$baseSize - calc($headingNumber/2)}rem
+    font-size: #{$baseSize - calc(($headingNumber/2) + .25)}rem
