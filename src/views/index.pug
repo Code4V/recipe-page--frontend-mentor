@@ -5,7 +5,7 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     script(src=require('./../index.js')) 
     link(rel="stylesheet", href=require('./../sass/index.sass'))
-    title Document
+    title Recipe Page
   body  
     main.recipe
       picture 
@@ -33,15 +33,15 @@ html(lang="en")
       section.ingredients
         h2.ingredients__heading Ingredients
         
-        ul.list-style-disc
-          li 2-3 large eggs
-          li Salt, to taste
-          li Pepper, to taste
-          li 1 tablespoon of butter or oil
-          li Optional fillings: cheese, diced vegetables, cooked meats, herbs
+        ul.ingredients__list.list-style-disc
+          li.ingredients__list-item 2-3 large eggs
+          li.ingredients__list-item Salt, to taste
+          li.ingredients__list-item Pepper, to taste
+          li.ingredients__list-item 1 tablespoon of butter or oil
+          li.ingredients__list-item Optional fillings: cheese, diced vegetables, cooked meats, herbs
 
       section.instructions
-        h2.instructions__header Instructions
+        h2.instructions__heading Instructions
 
         ol.instructions__list.list-style-number
           li.instructions__list-item 
@@ -69,9 +69,9 @@ html(lang="en")
             |: Serve hot, with additional salt and pepper if needed.
 
       section.nutrition 
-        h2 Nutrition
+        h2.nutrition__heading Nutrition
 
-        p The table below shows nutritional values per serving without the additional fillings.
+        p.nutrition__info The table below shows nutritional values per serving without the additional fillings.
 
         section.nutrition__list
           span Calories
