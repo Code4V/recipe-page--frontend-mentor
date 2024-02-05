@@ -8,27 +8,29 @@
   font-weight: 400
   color: $wenge-brown
 
-p, li
-  line-height: 1.75rem
+p
+  line-height: 1.5rem
 
 h1, h2, h3, h4, h5, h6
-  margin-block-start: 3.5rem
   font-family: 'Young Serif'
   color: $nutmeg
 
+ul, ol
+  margin-block-start: .7rem
+
 li
   list-style-position: outside
-  padding-inline-start: 1.25rem
-  margin-inline-start: 1rem
-  
+  padding-inline-start: 1rem
+  margin-inline-start: 1.5rem
+  line-height: 2rem  
 
-li:not(:last-child)
-  margin-block: 1rem
+// li:not(:last-child)
 
 li::marker
   display: block
   color: $nutmeg
   padding-inline-end: 1rem
+  font-size: .75rem
   
 .color-nutmeg
   color: $nutmeg
@@ -50,16 +52,16 @@ li::marker
 
 
 li > span
-  font-weight: 600 
+  font-weight: 700 
 
 section 
-  margin-block: 1rem
+  margin-block: 2rem
 
 @for $size from 1 through 9
   .weight-#{$size}00
     font-weight: #{$size}00
 
-$baseSize: 3.825
+$baseSize: 3
 @for $headingNumber from 1 through 6
   h#{$headingNumber}
     font-size: #{$baseSize - calc(($headingNumber/2))}rem
